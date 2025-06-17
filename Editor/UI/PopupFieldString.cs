@@ -1,10 +1,11 @@
 namespace TCS.UiToolkitUtils.Editor.UI {
     [UxmlElement] public partial class PopupFieldString : PopupField<string> 
     {
-        public new static readonly string ussClassName = "unity-popup-field";
+        public new static readonly string ussClassName = "popup-field-string";
         public new static readonly string labelUssClassName = ussClassName + "__label";
         public new static readonly string inputUssClassName = ussClassName + "__input";
 
+        #region Constructors
         public PopupFieldString() : base() { }
 
         public PopupFieldString(string label) : base(label) { }
@@ -50,5 +51,57 @@ namespace TCS.UiToolkitUtils.Editor.UI {
         {
             // The base constructor handles all the logic.
         }
+        #endregion
+
+        #region Initialization
+        public void SetElement(
+            string s,
+            List<string> list,
+            string defaultValue,
+            Func<string, string> valueCallback = null,
+            Func<string, string> itemCallback = null)
+        {
+            label = s;
+            choices = list;
+            value = defaultValue;
+            formatSelectedValueCallback = valueCallback;
+            formatListItemCallback = itemCallback;
+        }
+        public void SetElement(
+            List<string> list,
+            string defaultValue,
+            Func<string, string> valueCallback = null,
+            Func<string, string> itemCallback = null)
+        {
+            choices = list;
+            value = defaultValue;
+            formatSelectedValueCallback = valueCallback;
+            formatListItemCallback = itemCallback;
+        }
+        public void SetElement(
+            string s,
+            List<string> list,
+            int defaultIndex,
+            Func<string, string> valueCallback = null,
+            Func<string, string> itemCallback = null)
+        {
+            label = s;
+            choices = list;
+            index = defaultIndex;
+            formatSelectedValueCallback = valueCallback;
+            formatListItemCallback = itemCallback;
+        }
+        public void SetElement(
+            List<string> list,
+            int defaultIndex,
+            Func<string, string> valueCallback = null,
+            Func<string, string> itemCallback = null)
+        {
+            choices = list;
+            index = defaultIndex;
+            formatSelectedValueCallback = valueCallback;
+            formatListItemCallback = itemCallback;
+        }
+        #endregion
     }
 }

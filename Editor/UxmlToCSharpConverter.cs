@@ -40,17 +40,17 @@ namespace TCS.UiToolkitUtils.Editor {
         readonly List<string> m_elementFieldNames = new();
         readonly Dictionary<string, string> m_elementFieldTypes = new();
 
-        EventCallback<ChangeEvent<string>> m_namespaceChangeCallback;
-        EventCallback<ChangeEvent<string>> m_classNameChangeCallback;
-        EventCallback<ChangeEvent<bool>> m_extractUssToggleCallback;
-        EventCallback<ChangeEvent<bool>> m_setTextFieldsCallback;
-        EventCallback<ChangeEvent<bool>> m_allowDisplayNoneCallback;
-        EventCallback<ChangeEvent<bool>> m_isBindableCallback;
-        EventCallback<ChangeEvent<bool>> m_createBindDtoCallback;
-
-        EventCallback<ChangeEvent<string>> m_notifyValueTargetElementChangeCallback;
-        EventCallback<ChangeEvent<string>> m_notifyValueTargetAttributeChangeCallback;
-        EventCallback<ChangeEvent<Enum>> m_propertyTypeChangeCallback;
+        // EventCallback<ChangeEvent<string>> m_namespaceChangeCallback;
+        // EventCallback<ChangeEvent<string>> m_classNameChangeCallback;
+        // EventCallback<ChangeEvent<bool>> m_extractUssToggleCallback;
+        // EventCallback<ChangeEvent<bool>> m_setTextFieldsCallback;
+        // EventCallback<ChangeEvent<bool>> m_allowDisplayNoneCallback;
+        // EventCallback<ChangeEvent<bool>> m_isBindableCallback;
+        // EventCallback<ChangeEvent<bool>> m_createBindDtoCallback;
+        //
+        // EventCallback<ChangeEvent<string>> m_notifyValueTargetElementChangeCallback;
+        // EventCallback<ChangeEvent<string>> m_notifyValueTargetAttributeChangeCallback;
+        // EventCallback<ChangeEvent<Enum>> m_propertyTypeChangeCallback;
         #endregion
 
         #region Data Structures
@@ -97,42 +97,45 @@ namespace TCS.UiToolkitUtils.Editor {
             window.titleContent = new GUIContent( "UXML to C# Converter" );
             window.minSize = new Vector2( 800, 400 );
         }
+        
+        void OnNamespaceFieldValueChanged(ChangeEvent<string> evt) => GenerateAndDisplayPreview();
+        void OnClassNameFieldValueChanged(ChangeEvent<string> evt) => GenerateAndDisplayPreview();
+        void OnExtractUssToggleValueChanged(ChangeEvent<bool> evt) => GenerateAndDisplayPreview();
+        void OnSetTextFieldsToggleValueChanged(ChangeEvent<bool> evt) => GenerateAndDisplayPreview();
+        void OnAllowDisplayNoneToggleValueChanged(ChangeEvent<bool> evt) => GenerateAndDisplayPreview();
+
+        void OnIsBindableToggleValueChanged(ChangeEvent<bool> evt) {
+            m_propertiesFoldout.style.display = evt.newValue ? DisplayStyle.Flex : DisplayStyle.None;
+            GenerateAndDisplayPreview();
+        }
+
+        void OnCreateBindDtoToggleValueChanged(ChangeEvent<bool> evt) => GenerateAndDisplayPreview();
+
+        void OnNotifyValueTargetElementFieldValueChanged(ChangeEvent<string> evt) {
+            UpdateNotifyValueTargetControlsLogic();
+            GenerateAndDisplayPreview();
+        }
+
+        void OnNotifyValueTargetAttributeFieldValueChanged(ChangeEvent<string> evt) => GenerateAndDisplayPreview();
+
+        void OnPropertyTypeFieldValueChanged(ChangeEvent<Enum> evt) {
+            if (m_notifyValueTargetAttributeField.style.display == DisplayStyle.Flex) {
+                GenerateAndDisplayPreview();
+            }
+        }
 
         void RegisterCallbacks() {
-            m_namespaceChangeCallback = _ => GenerateAndDisplayPreview();
-            m_namespaceField.RegisterValueChangedCallback( m_namespaceChangeCallback );
-            m_classNameChangeCallback = _ => GenerateAndDisplayPreview();
-            m_outputClassNameField.RegisterValueChangedCallback( m_classNameChangeCallback );
-            m_extractUssToggleCallback = _ => GenerateAndDisplayPreview();
-            m_extractUssToggle.RegisterValueChangedCallback( m_extractUssToggleCallback );
-            m_setTextFieldsCallback = _ => GenerateAndDisplayPreview();
-            m_setTextFieldsToggle.RegisterValueChangedCallback( m_setTextFieldsCallback );
-            m_allowDisplayNoneCallback = _ => GenerateAndDisplayPreview();
-            m_allowDisplayNoneToggle.RegisterValueChangedCallback( m_allowDisplayNoneCallback );
-            m_isBindableCallback = evt => {
-                m_propertiesFoldout.style.display = evt.newValue ? DisplayStyle.Flex : DisplayStyle.None;
-                GenerateAndDisplayPreview();
-            };
-            m_isBindableToggle.RegisterValueChangedCallback( m_isBindableCallback );
-            m_createBindDtoCallback = _ => GenerateAndDisplayPreview();
-            m_createBindDtoToggle.RegisterValueChangedCallback( m_createBindDtoCallback );
+            m_namespaceField.RegisterValueChangedCallback(OnNamespaceFieldValueChanged);
+            m_outputClassNameField.RegisterValueChangedCallback(OnClassNameFieldValueChanged);
+            m_extractUssToggle.RegisterValueChangedCallback(OnExtractUssToggleValueChanged);
+            m_setTextFieldsToggle.RegisterValueChangedCallback(OnSetTextFieldsToggleValueChanged);
+            m_allowDisplayNoneToggle.RegisterValueChangedCallback(OnAllowDisplayNoneToggleValueChanged);
+            m_isBindableToggle.RegisterValueChangedCallback(OnIsBindableToggleValueChanged);
+            m_createBindDtoToggle.RegisterValueChangedCallback(OnCreateBindDtoToggleValueChanged);
 
-            // Callbacks for new INotifyValueChanged target fields
-            m_notifyValueTargetElementChangeCallback = _ => {
-                UpdateNotifyValueTargetControlsLogic(); // Update attribute choices
-                GenerateAndDisplayPreview();
-            };
-            m_notifyValueTargetElementField.RegisterValueChangedCallback( m_notifyValueTargetElementChangeCallback );
-
-            m_notifyValueTargetAttributeChangeCallback = _ => GenerateAndDisplayPreview();
-            m_notifyValueTargetAttributeField.RegisterValueChangedCallback( m_notifyValueTargetAttributeChangeCallback );
-
-            m_propertyTypeChangeCallback = _ => {
-                if ( m_notifyValueTargetAttributeField.style.display == DisplayStyle.Flex ) {
-                    GenerateAndDisplayPreview();
-                }
-            };
-            m_propertyTypeField.RegisterValueChangedCallback( m_propertyTypeChangeCallback );
+            m_notifyValueTargetElementField.RegisterValueChangedCallback(OnNotifyValueTargetElementFieldValueChanged);
+            m_notifyValueTargetAttributeField.RegisterValueChangedCallback(OnNotifyValueTargetAttributeFieldValueChanged);
+            m_propertyTypeField.RegisterValueChangedCallback(OnPropertyTypeFieldValueChanged);
         }
 
         void OnEnable() {
@@ -141,26 +144,25 @@ namespace TCS.UiToolkitUtils.Editor {
         }
 
         void OnDisable() {
-            if ( m_namespaceField != null && m_namespaceChangeCallback != null ) m_namespaceField.UnregisterCallback( m_namespaceChangeCallback );
-            if ( m_outputClassNameField != null && m_classNameChangeCallback != null ) m_outputClassNameField.UnregisterCallback( m_classNameChangeCallback );
-            if ( m_extractUssToggle != null && m_extractUssToggleCallback != null ) m_extractUssToggle.UnregisterValueChangedCallback( m_extractUssToggleCallback );
-            if ( m_setTextFieldsToggle != null && m_setTextFieldsCallback != null ) m_setTextFieldsToggle.UnregisterValueChangedCallback( m_setTextFieldsCallback );
-            if ( m_allowDisplayNoneToggle != null && m_allowDisplayNoneCallback != null ) m_allowDisplayNoneToggle.UnregisterValueChangedCallback( m_allowDisplayNoneCallback );
-            if ( m_isBindableToggle != null && m_isBindableCallback != null ) m_isBindableToggle.UnregisterValueChangedCallback( m_isBindableCallback );
-            if ( m_createBindDtoToggle != null && m_createBindDtoCallback != null ) m_createBindDtoToggle.UnregisterValueChangedCallback( m_createBindDtoCallback );
+            m_namespaceField?.UnregisterValueChangedCallback(OnNamespaceFieldValueChanged);
+            m_outputClassNameField?.UnregisterValueChangedCallback(OnClassNameFieldValueChanged);
+            m_extractUssToggle?.UnregisterValueChangedCallback(OnExtractUssToggleValueChanged);
+            m_setTextFieldsToggle?.UnregisterValueChangedCallback(OnSetTextFieldsToggleValueChanged);
+            m_allowDisplayNoneToggle?.UnregisterValueChangedCallback(OnAllowDisplayNoneToggleValueChanged);
+            m_isBindableToggle?.UnregisterValueChangedCallback(OnIsBindableToggleValueChanged);
+            m_createBindDtoToggle?.UnregisterValueChangedCallback(OnCreateBindDtoToggleValueChanged);
 
-            if ( m_notifyValueTargetElementField != null && m_notifyValueTargetElementChangeCallback != null ) m_notifyValueTargetElementField.UnregisterValueChangedCallback( m_notifyValueTargetElementChangeCallback );
-            if ( m_notifyValueTargetAttributeField != null && m_notifyValueTargetAttributeChangeCallback != null ) m_notifyValueTargetAttributeField.UnregisterValueChangedCallback( m_notifyValueTargetAttributeChangeCallback );
-            if ( m_propertyTypeField != null && m_propertyTypeChangeCallback != null ) m_propertyTypeField.UnregisterValueChangedCallback( m_propertyTypeChangeCallback );
+            m_notifyValueTargetElementField?.UnregisterValueChangedCallback(OnNotifyValueTargetElementFieldValueChanged);
+            m_notifyValueTargetAttributeField?.UnregisterValueChangedCallback(OnNotifyValueTargetAttributeFieldValueChanged);
+            m_propertyTypeField?.UnregisterValueChangedCallback(OnPropertyTypeFieldValueChanged);
 
             foreach (var definition in m_propertyDefinitions) {
-                if ( definition.CurrentValueElement != null && definition.StoredValueChangedCallback != null && definition.StoredCallbackType.HasValue ) {
-                    UnregisterCallback( definition.CurrentValueElement, definition.StoredCallbackType.Value, definition.StoredValueChangedCallback );
+                if (definition.CurrentValueElement != null && definition.StoredValueChangedCallback != null && definition.StoredCallbackType.HasValue) {
+                    UnregisterCallback(definition.CurrentValueElement, definition.StoredCallbackType.Value, definition.StoredValueChangedCallback);
                     definition.StoredValueChangedCallback = null;
                     definition.StoredCallbackType = null;
                 }
             }
-
             m_propertyDefinitions.Clear();
         }
 

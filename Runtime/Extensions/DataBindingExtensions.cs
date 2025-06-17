@@ -74,7 +74,7 @@ namespace TCS.UiToolkitUtils {
             BindingUpdateTrigger updateTrigger = BindingUpdateTrigger.OnSourceChanged
         ) {
             // Sets the data source type using the type of the property being bound.
-            binding.dataSourceType = typeof(TProperty);
+            // binding.dataSourceType = typeof(TProperty);
             // Sets the data source path using the property name derived from the lambda expression.
             binding.dataSourcePath = PropertyPath.FromName( GetMemberName( propertySelector ) );
             // Sets the binding mode (e.g., TwoWay, OneWay).

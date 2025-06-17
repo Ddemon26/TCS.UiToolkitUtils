@@ -1,0 +1,14 @@
+:root {
+    --BackGround: rgb(59, 59, 59);
+    --TextColor: rgb(210, 210, 210);
+    --InputBackGround: rgb(42, 42, 42);
+    --ButtonColor: rgb(88, 88, 88);
+    --TopDarkBorder: rgb(13, 13, 13);
+    --BottomDarkBorder: rgb(36, 36, 36);
+    --ButtonBorder: rgb(48, 48, 48);
+    --BorderAll: rgb(37, 37, 37);
+    --BorderTrim: rgb(33, 33, 33);
+    --DarkBackground: rgb(48, 48, 48);
+    --progress-color: rgb(44, 93, 135);
+    --new-var1: rgb(36, 36, 36);
+}

@@ -3,16 +3,17 @@
     -unity-font-definition: var(--font);
     color: var(--text-color);
     
-    --bg-color: rgb(48, 48, 48);
+    --bg-color: rgb(153, 153, 153);
+    --bg-color-alt: rgb(36, 36, 36);
+    --bg-color-alt2: rgb(48, 48, 48);
     --text-color: rgb(210, 210, 210);
     --input-bg-color: rgb(42, 42, 42);
     --button-color: rgb(88, 88, 88);
-    --button-color-alt: rgb(153, 153, 153);
-    --button-border-color: rgb(48, 48, 48);
     --border-top-fade: rgb(13, 13, 13);
     --border-bottom-fade: rgb(36, 36, 36);
-    --border-color: rgb(33, 33, 33);
-    --border-color-alt: rgb(37, 37, 37);
+    --border-color: rgb(48, 48, 48);
+    --border-color-alt: rgb(33, 33, 33);
+    --border-color-alt2: rgb(37, 37, 37);
     --progress-color: rgb(44, 93, 135);
 }
 
@@ -271,7 +272,7 @@
     overflow: hidden;
     white-space: nowrap;
     color: rgb(238, 238, 238);
-    background-color: rgb(88, 88, 88);
+    background-color: var(--button-color);
     border-left-color: rgb(48, 48, 48);
     border-right-color: rgb(48, 48, 48);
     border-top-color: rgb(48, 48, 48);
@@ -611,7 +612,7 @@
 .unity-progress-bar__background {
     border-width: 1px;
     border-color: rgb(37, 37, 37);
-    background-color: rgb(48, 48, 48);
+    background-color: var(--bg-color-alt);
     height: 19px;
 }
 

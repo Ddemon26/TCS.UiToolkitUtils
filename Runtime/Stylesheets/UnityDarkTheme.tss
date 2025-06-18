@@ -1,6 +1,31 @@
-@import url("/Assets/TCS.UiToolkitUtils/Runtime/BlankTheme.tss");
+@import url("/Assets/UI Toolkit/UnityThemes/UnityDefaultRuntimeTheme.tss");
 
-@import url("DefaultUnityStyles.dark.uss");
+@import url("DefaultUnityStyles.dark.elemental.uss");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

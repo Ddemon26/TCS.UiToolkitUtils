@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <ui:VisualElement style="flex-grow: 1; overflow: hidden; display: flex; flex-shrink: 1; background-color: rgb(60, 60, 60);">
+    <ui:VisualElement style="flex-grow: 1; overflow: hidden; display: flex; flex-shrink: 1; background-color: rgb(56, 56, 56);">
         <ui:ScrollView style="display: flex;">
             <ui:ListView show-add-remove-footer="true" />
             <ui:TreeView horizontal-scrolling="true" auto-expand="true" reorderable="true" show-border="true" />
@@ -14,8 +14,8 @@
             </ui:MultiColumnListView>
             <ui:MultiColumnTreeView>
                 <ui:Columns resize-preview="true">
-                    <ui:Column name="fsdfsdf" title="sdfsdf" width="10px" stretchable="false" />
-                    <ui:Column name="gdfgsdfgdfg" title="sdfgsdfg" width="10px" />
+                    <ui:Column name="First" title="First" width="10px" stretchable="false" />
+                    <ui:Column name="Second" title="Second" width="10px" />
                 </ui:Columns>
                 <ui:SortColumnDescriptions>
                     <ui:SortColumnDescription column-name="gfsdfgdfgdfg" column-index="0" />

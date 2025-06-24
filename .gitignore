@@ -62,3 +62,6 @@ crashlytics-build.properties
 **/bin/
 **/obj/
 .idea/
+
+**/Garbage/
+**/Garbage.meta

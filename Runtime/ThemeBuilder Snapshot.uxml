@@ -1,7 +1,7 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="True">
-    <ui:VisualElement style="flex-grow: 1; overflow: hidden; display: flex; flex-shrink: 1; background-color: rgb(56, 56, 56);">
+    <ui:VisualElement style="flex-grow: 1; overflow: hidden; display: flex; flex-shrink: 1; background-color: rgb(51, 51, 51);">
         <ui:ScrollView style="display: flex;">
-            <ui:ListView show-add-remove-footer="true" />
+            <ui:ListView show-add-remove-footer="true" item-template="project://database/Assets/Plugins/Tiny%20Giant%20Studio/Better%20Inspector/Better%20Transform/Scripts/Editor/BetterTransform.uxml?fileID=9197481963319205126&amp;guid=e8eee4a8330502c40b42313f6a99d0b6&amp;type=3#BetterTransform" />
             <ui:TreeView horizontal-scrolling="true" auto-expand="true" reorderable="true" show-border="true" />
             <ui:MultiColumnListView>
                 <ui:Columns primary-column-name="hghdfgh">

@@ -29,7 +29,7 @@ namespace TCS.UiToolkitUtils.Editor {
             public string ElementType { get; set; }
         }
 
-        [MenuItem( "Tools/TCS/UXML Style Extractor" )]
+        [MenuItem( "Window/UI Toolkit/UXML Style Extractor" )]
         public static void ShowWindow() {
             var window = GetWindow<UxmlStyleExtractor>( "UXML Style Extractor" );
             window.minSize = new Vector2( 480, 500 );

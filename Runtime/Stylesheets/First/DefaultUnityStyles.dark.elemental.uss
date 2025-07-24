@@ -95,19 +95,6 @@
     padding: 4px 0;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 .unity-base-dropdown__item {
     flex-direction: row;
     -unity-text-align: middle-left;
@@ -145,6 +132,19 @@
     text-overflow: ellipsis;
     -unity-text-overflow-position: end;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .unity-base-field {
     flex-direction: row;

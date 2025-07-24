@@ -1,0 +1,2423 @@
+:root {
+    --font: resource("Fonts/JetBrainsMono-Regular");
+    -unity-font-definition: var(--font) !important;
+    /* --- Base & Global --- */
+    --color-text-primary: #39ff14;
+    --color-text-secondary: rgba(57, 255, 20, 0.65);
+    --color-text-accent: rgb(170, 255, 170);
+    --color-text-focus: #aaffaa;
+    --color-accent-blue: #39ff14; /* Replaced with green */
+    --color-accent-gold: rgb(170, 255, 170); /* Replaced with light green */
+    --color-transparent: rgba(0, 0, 0, 0);
+
+    /* --- Main Panels & Views --- */
+    --panel-background-left: rgb(0, 0, 0);
+    --panel-background-main: rgb(5, 15, 5);
+    --panel-background-settings: rgb(0, 0, 0);
+    --panel-background-viewport: rgb(0, 0, 0);
+    --panel-background-group-container: rgb(10, 20, 10);
+    --panel-background-box: rgba(10, 25, 10, 0.3);
+    --panel-background-help-box: rgb(15, 30, 15);
+    --panel-border-help-box: rgb(0, 50, 0);
+
+    /* --- PlayMode Toolbar --- */
+    --playmode-button-background-default: rgb(0, 60, 0);
+    --playmode-button-background-hover: rgb(10, 80, 10);
+    --playmode-button-background-active: rgb(26, 129, 26);
+
+    /* --- Toolbar --- */
+    --toolbar-background-default: rgb(10, 20, 10);
+    --toolbar-background-main: rgb(0, 0, 0);
+    --toolbar-border-default: rgb(0, 40, 0);
+    --toolbar-breadcrumbs-text-color: var(--color-text-primary);
+    --toolbar-overlay-background-default: rgb(10, 30, 10);
+    --toolbar-overlay-background-hover: rgb(20, 50, 20);
+
+    /* --- Toolbar Button --- */
+    --toolbar-button-background-default: rgb(10, 20, 10);
+    --toolbar-button-background-hover: rgb(20, 40, 20);
+    --toolbar-button-background-active: rgb(30, 60, 30);
+    --toolbar-button-border-default: rgb(0, 40, 0);
+    --toolbar-button-border-focus: var(--color-text-primary);
+    --toolbar-button-text-color: var(--color-text-primary);
+
+    /* --- Toolbar Toggle --- */
+    --toolbar-toggle-background-default: rgb(10, 20, 10);
+    --toolbar-toggle-background-hover: rgb(20, 40, 20);
+    --toolbar-toggle-background-active: rgb(30, 60, 30);
+    --toolbar-toggle-background-checked: rgb(25, 80, 25);
+    --toolbar-toggle-border-default: rgb(0, 40, 0);
+    --toolbar-toggle-text-color: var(--color-text-primary);
+
+    /* --- Toolbar Menu --- */
+    --toolbar-menu-background-default: rgb(10, 20, 10);
+    --toolbar-menu-background-hover: rgb(20, 40, 20);
+    --toolbar-menu-background-active: rgb(30, 60, 30);
+    --toolbar-menu-border-default: rgb(0, 40, 0);
+    --toolbar-menu-text-color: var(--color-text-primary);
+
+    /* --- Experimental Tag (Toolbar/Global) --- */
+    --experimental-tag-background: rgb(20, 0, 0);
+    --experimental-tag-border-color: var(--color-accent-gold);
+    --experimental-tag-text-color: var(--color-accent-gold);
+
+    /* --- Button --- */
+    --button-background-default: rgb(0, 55, 0);
+    --button-background-hover: rgb(10, 75, 10);
+    --button-background-active: rgb(20, 95, 20);
+    --button-border-color-top-default: rgb(15, 45, 15);
+    --button-border-color-sides-default: rgb(15, 45, 15);
+    --button-border-color-bottom-default: rgb(0, 30, 0);
+    --button-border-color-top-active: rgb(0, 15, 0);
+    --button-border-color-active: rgb(0, 30, 0);
+    --button-border-color-focus: var(--color-text-primary);
+    --button-text-color: var(--color-text-primary);
+
+    /* --- Button Group --- */
+    --button-group-background-active: rgb(20, 95, 20);
+    --button-group-background-hover: rgb(15, 85, 15);
+    --button-group-border-left-focus: rgb(15, 45, 15);
+    --button-strip-field-background-checked: rgb(25, 105, 25);
+
+    /* --- Base Text Field --- */
+    --base-text-field-background-default: rgb(0, 0, 0);
+    --base-text-field-border-top-default: rgb(0, 15, 0);
+    --base-text-field-border-sides-default: rgb(0, 30, 0);
+    --base-text-field-border-bottom-default: rgb(0, 30, 0);
+    --base-text-field-border-color-hover: rgb(10, 70, 10);
+    --base-text-field-border-color-focus: var(--color-text-primary);
+    --base-text-field-text-color: var(--color-text-primary);
+    --base-text-field-cursor-color: var(--color-text-focus);
+    --base-text-field-selection-color: rgba(0, 80, 0, 0.65);
+
+    /* --- Search Field --- */
+    --search-field-background-default: rgb(0, 0, 0);
+    --search-field-border-top-default: rgb(0, 15, 0);
+    --search-field-border-sides-default: rgb(0, 30, 0);
+    --search-field-border-bottom-default: rgb(0, 30, 0);
+    --search-field-border-color-hover: rgb(10, 70, 10);
+    --search-field-border-color-focus: var(--color-text-primary);
+
+    /* --- Popup Field (Enum, etc.) --- */
+    --popup-field-background-default: rgb(0, 55, 0);
+    --popup-field-background-hover: rgb(10, 75, 10);
+    --popup-field-border-color-top-default: rgb(15, 45, 15);
+    --popup-field-border-color-sides-default: rgb(15, 45, 15);
+    --popup-field-border-color-bottom-default: rgb(0, 30, 0);
+    --popup-field-border-color-focus: var(--color-text-primary);
+    --popup-field-text-color: var(--color-text-primary);
+
+    /* --- Dropdown Menu --- */
+    --dropdown-menu-background-outer: rgb(0, 0, 0);
+    --dropdown-menu-background-inner: rgb(10, 20, 10);
+    --dropdown-menu-background-item-hover: rgb(20, 50, 20);
+    --dropdown-menu-border-color-outer: rgb(0, 30, 0);
+    --dropdown-menu-border-color-inner: rgb(10, 70, 10);
+    --dropdown-menu-separator-color: rgb(10, 70, 10);
+    --dropdown-menu-text-color: var(--color-text-primary);
+
+    /* --- Slider --- */
+    --slider-background-tracker: rgb(0, 40, 0);
+    --slider-background-dragger: var(--color-text-primary);
+    --slider-background-dragger-hover: var(--color-text-focus);
+    --slider-background-tracker-disabled: rgb(0, 20, 0);
+    --slider-background-dragger-disabled: rgb(0, 60, 0);
+    --slider-background-fill: var(--color-text-primary);
+    --slider-background-fill-disabled: rgb(0, 60, 0);
+    --slider-border-color-dragger: rgb(0, 60, 0);
+    --slider-border-color-dragger-disabled: rgb(0, 40, 0);
+    --slider-dragger-border-background: rgba(170, 255, 170, 0.5);
+
+    /* --- MinMax Slider --- */
+    --min-max-slider-background-tracker: rgb(0, 40, 0);
+    --min-max-slider-background-thumb: var(--color-text-primary);
+    --min-max-slider-background-thumb-hover: var(--color-text-focus);
+    --min-max-slider-background-movable: var(--color-text-primary);
+    --min-max-slider-border-color-thumb: rgb(0, 60, 0);
+    --min-max-slider-border-color-movable: var(--color-text-focus);
+
+    /* --- Radio Button --- */
+    --radio-button-background-unchecked: rgb(0, 0, 0);
+    --radio-button-background-checked: var(--color-text-primary);
+    --radio-button-border-color-default: rgb(0, 60, 0);
+    --radio-button-border-color-hover: rgb(10, 80, 10);
+    --radio-button-border-color-focus: var(--color-text-primary);
+    --radio-button-text-color-focus: var(--color-text-accent);
+
+    /* --- Object Field --- */
+    --object-field-background-default: rgb(0, 0, 0);
+    --object-field-background-selector: rgb(0, 55, 0);
+    --object-field-background-selector-hover: rgb(10, 75, 10);
+    --object-field-background-accept-drop: rgb(20, 95, 20);
+    --object-field-border-color-default: rgb(0, 50, 0);
+    --object-field-border-color-hover: rgb(10, 80, 10);
+    --object-field-border-color-focus: var(--color-text-primary);
+    --object-field-text-color-default: var(--color-text-secondary);
+    --object-field-text-color-focus: var(--color-text-primary);
+    --object-field-display-text-color: var(--color-text-primary);
+
+    /* --- Collection/List/Tree Views --- */
+    --collection-view-background-item-alt: rgb(5, 20, 5);
+    --collection-view-background-item-hover: rgb(10, 40, 10);
+    --collection-view-background-item-selected: rgb(15, 60, 15);
+    --collection-view-background-item-selected-focus: rgb(20, 80, 20);
+    --collection-view-background-drag-hover: rgb(20, 50, 20);
+    --collection-view-background-drag-hover-selected-focus: rgb(25, 90, 25);
+    --collection-view-drag-bar-color: var(--color-text-focus);
+    --collection-view-drag-marker-border-color: var(--color-text-focus);
+    --collection-view-border-color: rgb(0, 40, 0);
+    --collection-view-text-color-selected: var(--color-text-primary);
+    --tree-view-background-default: rgb(0, 0, 0);
+    --list-view-background-footer: rgb(10, 25, 10);
+    --list-view-background-header: rgb(10, 20, 10);
+    --list-view-background-header-hover: rgb(15, 35, 15);
+    --list-view-background-reorder-handle: var(--color-text-secondary);
+    --list-view-border-color-default: rgb(0, 40, 0);
+    --list-view-border-color-header: rgb(0, 50, 0);
+
+    /* --- Scroller --- */
+    --scroller-background-default: rgba(0, 0, 0, 0.2);
+    --scroller-background-button-hover: rgb(10, 40, 10);
+    --scroller-background-dragger: rgb(15, 60, 15);
+    --scroller-background-dragger-hover: rgb(20, 80, 20);
+    --scroller-border-color-dragger: rgb(0, 40, 0);
+    --scroller-border-color-vertical: rgba(0, 30, 0, 0.5);
+    --scroller-border-color-horizontal: rgba(0, 30, 0, 0.5);
+
+    /* --- Tabs --- */
+    --tab-background-header-default: rgb(0, 0, 0);
+    --tab-background-header-hover: rgb(10, 30, 10);
+    --tab-background-header-underline: var(--color-text-primary);
+    --tab-background-dragging: rgb(20, 50, 20);
+    --tab-content-background: rgb(5, 15, 5);
+    --tab-view-drag-preview-border-color: var(--color-text-primary);
+    --tab-view-drag-location-preview-color: rgb(15, 60, 15);
+    --tab-text-color: var(--color-text-primary);
+
+    /* --- Progress Bar --- */
+    --progress-bar-background: rgb(0, 30, 0);
+    --progress-bar-background-fill: var(--color-text-primary);
+    --progress-bar-border-color: rgb(0, 50, 0);
+    --progress-bar-text-color: rgb(0,0,0);
+
+    /* --- Color Field --- */
+    --color-field-background-eyedropper: rgb(0, 40, 0);
+    --color-field-background-eyedropper-hover: rgb(10, 60, 10);
+    --color-field-background-mixed-value: rgb(20, 40, 20);
+    --color-field-progress-bar-background: rgb(0, 0, 0);
+    --color-field-progress-bar-fill: var(--color-text-primary);
+    --color-field-border-color-default: rgb(0, 50, 0);
+    --color-field-border-color-hover: rgb(10, 80, 10);
+    --color-field-border-color-focus: var(--color-text-primary);
+    --color-field-text-color-mixed-value: var(--color-text-primary);
+
+    /* --- Curve Field --- */
+    --curve-field-background: rgb(5, 25, 5);
+    --curve-field-border-color-default: rgb(0, 50, 0);
+    --curve-field-border-color-focus: var(--color-text-primary);
+    --curve-field-curve-color: var(--color-text-primary);
+
+    /* --- Gradient Field --- */
+    --gradient-field-border-color-default: rgb(0, 50, 0);
+    --gradient-field-border-color-focus: var(--color-text-primary);
+    --gradient-field-inner-border-color-default: rgb(0, 30, 0);
+    --gradient-field-inner-border-color-focus: var(--color-text-focus);
+
+    /* --- Multi-Column Header --- */
+    --multi-column-header-background-default: rgb(10, 25, 10);
+    --multi-column-header-background-hover: rgb(15, 40, 15);
+    --multi-column-header-background-active: rgb(20, 60, 20);
+    --multi-column-header-background-moving: rgb(25, 80, 25);
+    --multi-column-header-resize-preview-color: var(--color-text-primary);
+    --multi-column-header-move-preview-border-color: var(--color-text-primary);
+    --multi-column-header-border-right-default: rgb(0, 50, 0);
+
+    /* --- Pop-up Window --- */
+    --popup-window-background: rgba(5, 20, 5, 0.95);
+    --popup-window-border-color: rgb(0, 50, 0);
+    --popup-window-root-border-color: rgb(20, 80, 20);
+    --popup-window-text-color: var(--color-text-primary);
+
+    /* --- Binding (Prefab Overrides, Animation) --- */
+    --binding-bar-background-prefab-override: rgb(0, 128, 128); /* Teal */
+    --binding-bar-background-live-property: rgb(128, 128, 0); /* Olive */
+    --binding-bar-background-preset-ignore: rgb(128, 0, 128); /* Purple */
+    --binding-tint-color-animation-animated: rgb(0, 200, 200); /* Bright Cyan */
+    --binding-tint-color-animation-recorded: rgb(255, 100, 0); /* Orange */
+    --binding-tint-color-animation-candidate: rgb(255, 165, 0); /* Lighter Orange */
+
+    /* --- Misc --- */
+    --foldout-text-color-focus: var(--color-text-accent);
+    --two-pane-split-view-dragline-color: var(--color-transparent);
+    --two-pane-split-view-dragline-anchor-color: rgb(15, 60, 15);
+    --composite-field-text-color-mixed-value: var(--color-text-secondary);
+    --overlay-toolbutton-background-color: rgb(0, 40, 0);
+}
+
+TemplateContainer{
+    -unity-font-definition: var(--font) !important;
+}
+
+VisualElement {
+    -unity-font-definition: var(--font) !important;
+}
+
+.search-list-view-item{
+}
+
+.settings-panel {
+    -unity-font-definition: var(--font) !important;
+}
+
+.blackboardField .pill #contents > #top > #title-label {
+    color: var(--color-text-primary);
+}
+
+#LeftPanel {
+    background-color: var(--panel-background-left);
+}
+
+#unity-overlay-canvas .unity-scroll-view--horizontal > .unity-scroll-view__content-and-vertical-scroll-container > .unity-scroll-view__content-viewport {
+    background-color: var(--panel-background-main);
+}
+
+#unity-overlay-canvas .unity-scroll-view--vertical.unity-scroll-view--scroll > .unity-scroll-view__content-and-vertical-scroll-container > .unity-scroll-view__content-viewport > .unity-scroll-view__content-container {
+    background-color: var(--panel-background-main);
+}
+
+#PlayMode #Play {
+    background-color: var(--playmode-button-background-default);
+}
+#PlayMode #Play:hover:enabled {
+    background-color: var(--playmode-button-background-hover);
+}
+#PlayMode #Play:checked {
+    background-color: var(--playmode-button-background-active);
+}
+#PlayMode #Play .unity-image{
+    -unity-background-image-tint-color: var(--color-text-primary);
+}
+
+#PlayMode #Pause {
+    background-color: var(--playmode-button-background-default);
+}
+#PlayMode #Pause:hover:enabled {
+    background-color: var(--playmode-button-background-hover);
+}
+#PlayMode #Pause:checked {
+    background-color: var(--playmode-button-background-active);
+}
+
+#PlayMode #Step {
+    background-color: var(--playmode-button-background-default);
+}
+#PlayMode #Step:hover:enabled {
+    background-color: var(--playmode-button-background-hover);
+}
+#PlayMode #Step:checked {
+    background-color: var(--playmode-button-background-active);
+}
+
+.unity-editor-main-toolbar {
+    background-color: var(--toolbar-background-main);
+}
+
+#packageDetails .detail #detailsHeader {
+    background-color: var(--panel-background-main);
+}
+
+#groupContainer > PackageItem {
+    background-color: var(--panel-background-group-container);
+}
+
+.unity-builder__pane {
+    background-color: var(--panel-background-main);
+}
+
+#library > #content-container {
+    background-color: var(--panel-background-main);
+}
+
+#viewport-wrapper {
+    background-color: var(--panel-background-viewport);
+}
+
+#explorer-container {
+    background-color: var(--panel-background-main);
+}
+
+.unity-toggle-button-group {
+}
+
+.unity-overlay{
+}
+
+OverlayToolbar > VisualElement > ToolButton{
+    background-color: var(--overlay-toolbutton-background-color);
+}
+.unity-toolbar-overlay .unity-toolbar-toggle .unity-base-field__input {
+    background-color: var(--toolbar-overlay-background-default);
+}
+
+#BuiltinTools .unity-toolbar-toggle{
+}
+
+#BuiltinTools .unity-toolbar-toggle:checked {
+    background-color: var(--toolbar-toggle-background-checked);
+}
+
+#BuiltinTools .unity-toolbar-toggle:hover:enabled {
+    background-color: var(--toolbar-toggle-background-checked);
+}
+
+.unity-toolbar-overlay .unity-toolbar-toggle .unity-base-field__input:checked {
+    background-color: var(--toolbar-overlay-background-hover);
+}
+
+.unity-toolbar-overlay .unity-toolbar-toggle .unity-base-field__input:hover:enabled {
+    background-color: var(--toolbar-overlay-background-hover);
+}
+
+
+.unity-toolbar-overlay .unity-editor-toolbar-element {
+    background-color: var(--toolbar-overlay-background-default);
+}
+
+#overlay-content .unity-toolbar-overlay .unity-toolbar-button {
+    background-color: var(--toolbar-overlay-background-hover);
+}
+
+.unity-toolbar-overlay .unity-dropdown-toggle .unity-button {
+    background-color: var(--toolbar-overlay-background-hover);
+}
+
+.unity-toolbar-overlay .unity-dropdown-toggle .unity-dropdown-toggle__toggle {
+    background-color: var(--toolbar-overlay-background-default);
+}
+
+.unity-toolbar-overlay .unity-dropdown-toggle .unity-dropdown-toggle__toggle:checked {
+    background-color: var(--toolbar-overlay-background-hover);
+}
+
+.unity-toolbar-overlay .unity-dropdown-toggle .unity-dropdown-toggle__dropdown {
+    background-color: var(--toolbar-overlay-background-default);
+}
+
+.unity-toolbar-overlay .unity-dropdown-toggle .unity-dropdown-toggle__dropdown:checked {
+    background-color: var(--toolbar-overlay-background-hover);
+}
+
+.unity-disabled {
+}
+
+.unity-hidden {
+}
+
+.unity-base-field {
+    -unity-font-definition: var(--font) !important;
+}
+
+.unity-base-field__label {
+    -unity-font-definition: var(--font) !important;
+    color: var(--color-text-primary) !important;
+}
+
+.unity-base-field__input {
+}
+
+.unity-base-field__label--with-dragger {
+}
+
+.unity-property-field > .unity-imgui-container {
+}
+
+.unity-base-field__label--mixed-value > .unity-base-text-field__input {
+    color: var(--color-text-secondary);
+}
+
+.unity-base-field__label--mixed-value > .unity-base-field__input {
+    color: var(--color-text-secondary);
+}
+
+.unity-button {
+    color: var(--button-text-color);
+    background-color: var(--button-background-default);
+    border-left-color: var(--button-border-color-sides-default);
+    border-top-color: var(--button-border-color-top-default);
+    border-right-color: var(--button-border-color-sides-default);
+    border-bottom-color: var(--button-border-color-bottom-default);
+}
+
+.unity-button:hover:enabled {
+    background-color: var(--button-background-hover);
+}
+
+.unity-button:active:enabled {
+    background-color: var(--button-background-active);
+    border-color: var(--button-border-color-active);
+    border-top-color: var(--button-border-color-top-active);
+}
+
+.unity-button:checked {
+    background-color: var(--button-background-active);
+    border-color: var(--button-border-color-active);
+    border-top-color: var(--button-border-color-top-active);
+}
+
+.unity-button:focus:enabled {
+    border-left-color: var(--button-border-color-focus);
+    border-top-color: var(--button-border-color-focus);
+    border-right-color: var(--button-border-color-focus);
+    border-bottom-color: var(--button-border-color-focus);
+}
+
+.unity-button--with-icon {
+}
+
+.unity-button--with-icon > .unity-button__image {
+}
+
+.unity-button--with-icon-only > .unity-button__image {
+}
+
+.unity-label {
+}
+
+.unity-toggle {
+}
+
+.unity-toggle__label {
+}
+
+.unity-toggle__input {
+}
+
+.unity-toggle__checkmark {
+}
+
+.unity-toggle__checkmark.unity-toggle__mixed-values {
+}
+
+.unity-toggle > .unity-toggle__input:hover:enabled > .unity-toggle__checkmark.unity-toggle__mixed-values {
+}
+
+.unity-toggle > .unity-toggle__input:focus:enabled > .unity-toggle__checkmark.unity-toggle__mixed-values {
+}
+
+.unity-toggle > .unity-toggle__input:checked > .unity-toggle__checkmark {
+}
+
+.unity-toggle > .unity-toggle__input:active:enabled > .unity-toggle__checkmark {
+}
+
+.unity-toggle > .unity-toggle__input:hover:enabled > .unity-toggle__checkmark {
+}
+
+.unity-toggle > .unity-toggle__input:hover:enabled:checked > .unity-toggle__checkmark {
+}
+
+.unity-toggle > .unity-toggle__input:hover:enabled:active > .unity-toggle__checkmark {
+}
+
+.unity-toggle > .unity-toggle__input:focus:enabled > .unity-toggle__checkmark {
+}
+
+.unity-toggle > .unity-toggle__input:focus:enabled:checked > .unity-toggle__checkmark {
+}
+
+.unity-toggle__text {
+}
+
+.unity-radio-button {
+}
+
+.unity-radio-button__label {
+}
+
+.unity-radio-button__input {
+}
+
+.unity-radio-button__input:focus:enabled > .unity-radio-button__text {
+    color: var(--radio-button-text-color-focus);
+}
+
+.unity-radio-button__checkmark-background {
+    background-color: var(--radio-button-background-unchecked);
+    border-color: var(--radio-button-border-color-default);
+}
+
+.unity-radio-button__checkmark {
+    background-color: var(--radio-button-background-checked);
+}
+
+.unity-radio-button > .unity-radio-button__input:hover:enabled > .unity-radio-button__checkmark-background {
+    border-color: var(--radio-button-border-color-hover);
+}
+
+.unity-radio-button > .unity-radio-button__input:focus:enabled > .unity-radio-button__checkmark-background {
+    border-color: var(--radio-button-border-color-focus);
+}
+
+.unity-radio-button__text {
+}
+
+.unity-base-field__input > .unity-radio-button {
+}
+
+.unity-group-box {
+}
+
+.unity-group-box__label {
+}
+
+.unity-radio-button-group {
+}
+
+.unity-base-slider__input {
+}
+
+.unity-base-slider--vertical .unity-base-slider__input {
+}
+
+.unity-base-slider--horizontal .unity-base-slider__input {
+}
+
+.unity-base-slider--vertical {
+}
+
+.unity-base-slider--horizontal {
+}
+
+.unity-base-slider--vertical .unity-base-slider__tracker {
+    background-color: var(--slider-background-tracker);
+}
+
+.unity-base-slider--horizontal .unity-base-slider__tracker {
+    background-color: var(--slider-background-tracker);
+}
+
+.unity-base-slider--vertical .unity-base-slider__dragger {
+    border-color: var(--slider-border-color-dragger);
+    background-color: var(--slider-background-dragger);
+}
+
+.unity-base-slider--horizontal .unity-base-slider__dragger {
+    border-color: var(--slider-border-color-dragger);
+    background-color: var(--slider-background-dragger);
+}
+
+.unity-base-slider__dragger:hover:enabled {
+    background-color: var(--slider-background-dragger-hover);
+}
+
+.unity-base-slider__input:focus:enabled .unity-base-slider__dragger {
+    background-color: var(--slider-background-dragger-hover);
+}
+
+.unity-base-slider__tracker:disabled {
+    background-color: var(--slider-background-tracker-disabled);
+}
+
+.unity-base-slider__dragger:disabled {
+    border-color: var(--slider-border-color-dragger-disabled);
+    background-color: var(--slider-background-dragger-disabled);
+}
+
+.unity-base-slider__dragger-border {
+    background-color: var(--slider-dragger-border-background);
+}
+
+.unity-base-slider--horizontal .unity-base-slider__dragger-border {
+}
+
+.unity-base-slider--vertical .unity-base-slider__dragger-border {
+}
+
+.unity-base-slider__input:focus:enabled .unity-base-slider__dragger-border {
+}
+
+.unity-base-slider__drag-container {
+}
+
+.unity-base-slider--horizontal .unity-base-slider__drag-container {
+}
+
+.unity-base-slider--vertical .unity-base-slider__drag-container {
+}
+
+.unity-base-slider--horizontal .unity-base-slider__text-field {
+}
+
+.unity-base-slider--vertical .unity-base-slider__text-field {
+}
+
+.unity-base-slider__fill {
+    background-color: var(--slider-background-fill);
+}
+
+.unity-base-slider__fill:disabled {
+    background-color: var(--slider-background-fill-disabled);
+}
+
+.unity-min-max-slider__input {
+}
+
+.unity-min-max-slider__tracker {
+    background-color: var(--min-max-slider-background-tracker);
+}
+
+.unity-min-max-slider__dragger {
+    background-color: var(--min-max-slider-background-thumb);
+}
+
+.unity-min-max-slider__min-thumb {
+    background-color: var(--min-max-slider-background-thumb);
+    border-color: var(--min-max-slider-border-color-thumb);
+}
+
+.unity-min-max-slider__max-thumb {
+    background-color: var(--min-max-slider-background-thumb);
+    border-color: var(--min-max-slider-border-color-thumb);
+}
+
+.unity-min-max-slider__min-thumb:hover {
+    background-color: var(--min-max-slider-background-thumb-hover);
+}
+
+.unity-min-max-slider__max-thumb:hover {
+    background-color: var(--min-max-slider-background-thumb-hover);
+}
+
+.unity-min-max-slider--movable {
+    border-color: var(--min-max-slider-border-color-movable);
+    background-color: var(--min-max-slider-background-movable);
+}
+
+.unity-min-max-slider__min-thumb.unity-min-max-slider--movable {
+    background-color: var(--min-max-slider-background-movable);
+}
+
+.unity-min-max-slider__max-thumb.unity-min-max-slider--movable {
+    background-color: var(--min-max-slider-background-movable);
+}
+
+.unity-scroller--horizontal {
+    background-color: var(--scroller-background-default);
+    border-top-color: var(--scroller-border-color-horizontal);
+}
+
+.unity-scroller--vertical {
+    background-color: var(--scroller-background-default);
+    border-left-color: var(--scroller-border-color-vertical);
+}
+
+.unity-scroller--horizontal > .unity-scroller__low-button {
+}
+
+.unity-scroller--horizontal > .unity-scroller__high-button {
+}
+
+.unity-scroller--vertical > .unity-scroller__low-button {
+}
+
+.unity-scroller--vertical > .unity-scroller__high-button {
+}
+
+.unity-scroller--horizontal > .unity-scroller__low-button:hover:enabled {
+    background-color: var(--scroller-background-button-hover);
+}
+
+.unity-scroller--horizontal > .unity-scroller__high-button:hover:enabled {
+    background-color: var(--scroller-background-button-hover);
+}
+
+.unity-scroller--vertical > .unity-scroller__low-button:hover:enabled {
+    background-color: var(--scroller-background-button-hover);
+}
+
+.unity-scroller--vertical > .unity-scroller__high-button:hover:enabled {
+    background-color: var(--scroller-background-button-hover);
+}
+
+.unity-scroller--horizontal .unity-base-slider__tracker {
+    background-color: transparent;
+}
+
+.unity-scroller--vertical .unity-base-slider__tracker {
+    background-color: transparent;
+}
+
+.unity-scroller--vertical .unity-base-slider__dragger {
+    border-color: var(--scroller-border-color-dragger);
+    background-color: var(--scroller-background-dragger);
+}
+
+.unity-scroller--horizontal .unity-base-slider__dragger {
+    border-color: var(--scroller-border-color-dragger);
+    background-color: var(--scroller-background-dragger);
+}
+
+.unity-scroller--vertical .unity-base-slider__dragger:hover:enabled {
+    background-color: var(--scroller-background-dragger-hover);
+}
+
+.unity-scroller--horizontal .unity-base-slider__dragger:hover:enabled {
+    background-color: var(--scroller-background-dragger-hover);
+}
+
+.unity-scroller--horizontal > .unity-scroller__slider {
+}
+
+.unity-scroller--vertical > .unity-scroller__slider {
+}
+
+.unity-scroller--vertical > .unity-base-slider--vertical {
+}
+
+.unity-scroller--horizontal .unity-base-slider__input:focus:enabled .unity-base-slider__dragger {
+    background-color: var(--scroller-background-dragger);
+}
+
+.unity-scroller--vertical .unity-base-slider__input:focus:enabled .unity-base-slider__dragger {
+    background-color: var(--scroller-background-dragger);
+}
+
+.unity-scroller--vertical .unity-base-slider__input:focus:enabled .unity-base-slider__dragger:hover:enabled {
+    background-color: var(--scroller-background-dragger-hover);
+}
+
+.unity-scroller--horizontal .unity-base-slider__input:focus:enabled .unity-base-slider__dragger:hover:enabled {
+    background-color: var(--scroller-background-dragger-hover);
+}
+
+.unity-scroller--horizontal .unity-base-slider__input:focus:enabled .unity-base-slider__dragger-border {
+}
+
+.unity-scroller--vertical .unity-base-slider__input:focus:enabled .unity-base-slider__dragger-border {
+}
+
+.unity-scroll-view {
+}
+
+.unity-scroll-view__content-container {
+}
+
+.unity-scroll-view--vertical > .unity-scroll-view__content-and-vertical-scroll-container > .unity-scroll-view__content-viewport {
+}
+
+.unity-scroll-view--vertical > .unity-scroll-view__content-and-vertical-scroll-container > .unity-scroll-view__content-viewport > .unity-scroll-view__content-container {
+}
+
+.unity-scroll-view--horizontal > .unity-scroll-view__content-and-vertical-scroll-container > .unity-scroll-view__content-viewport {
+}
+
+.unity-scroll-view--horizontal > .unity-scroll-view__content-and-vertical-scroll-container > .unity-scroll-view__content-viewport > .unity-scroll-view__content-container {
+}
+
+.unity-scroll-view--vertical-horizontal > .unity-scroll-view__content-and-vertical-scroll-container > .unity-scroll-view__content-viewport {
+}
+
+.unity-scroll-view--vertical-horizontal > .unity-scroll-view__content-and-vertical-scroll-container > .unity-scroll-view__content-viewport > .unity-scroll-view__content-container {
+}
+
+.unity-scroll-view__content-viewport {
+}
+
+.unity-scroll-view--horizontal.unity-scroll-view--scroll > .unity-scroll-view__content-and-vertical-scroll-container > .unity-scroll-view__content-viewport > .unity-scroll-view__content-container {
+}
+
+.unity-scroll-view--vertical.unity-scroll-view--scroll > .unity-scroll-view__content-and-vertical-scroll-container > .unity-scroll-view__content-viewport > .unity-scroll-view__content-container {
+}
+
+.unity-scroll-view--vertical-horizontal.unity-scroll-view--scroll > .unity-scroll-view__content-and-vertical-scroll-container > .unity-scroll-view__content-viewport > .unity-scroll-view__content-container {
+}
+
+.unity-scroll-view--vertical-horizontal.unity-scroll-view--scroll > .unity-scroll-view__content-and-vertical-scroll-container > .unity-scroll-view__content-viewport {
+}
+
+.unity-scroll-view__content-and-vertical-scroll-container {
+}
+
+.unity-scroll-view__horizontal-scroller {
+}
+
+.unity-scroll-view__vertical-scroller {
+}
+
+.unity-box {
+    background-color: var(--panel-background-box);
+    border-color: transparent;
+}
+
+.unity-popup-window {
+    color: var(--popup-window-text-color);
+    background-color: var(--popup-window-background);
+    border-color: var(--popup-window-border-color);
+}
+
+.unity-popup-window__content-container {
+}
+
+.unity-enum-field__input {
+    border-left-color: var(--popup-field-border-color-sides-default);
+    border-top-color: var(--popup-field-border-color-top-default);
+    border-right-color: var(--popup-field-border-color-sides-default);
+    border-bottom-color: var(--popup-field-border-color-bottom-default);
+    background-color: var(--popup-field-background-default);
+}
+
+.unity-base-popup-field__input {
+    border-left-color: var(--popup-field-border-color-sides-default);
+    border-top-color: var(--popup-field-border-color-top-default);
+    border-right-color: var(--popup-field-border-color-sides-default);
+    border-bottom-color: var(--popup-field-border-color-bottom-default);
+    background-color: var(--popup-field-background-default);
+}
+
+.unity-enum-field__arrow {
+}
+
+.unity-base-popup-field__arrow {
+}
+
+.unity-enum-field__text {
+    color: var(--popup-field-text-color);
+}
+
+.unity-base-popup-field__text {
+    color: var(--popup-field-text-color);
+}
+
+.unity-enum-field:hover:enabled > .unity-enum-field__input {
+    background-color: var(--popup-field-background-hover);
+}
+
+.unity-base-popup-field:hover:enabled > .unity-base-popup-field__input {
+    background-color: var(--popup-field-background-hover);
+}
+
+.unity-enum-field:focus:enabled > .unity-enum-field__input {
+    border-color: var(--popup-field-border-color-focus);
+}
+
+.unity-base-popup-field:focus:enabled > .unity-base-popup-field__input {
+    border-color: var(--popup-field-border-color-focus);
+}
+
+.unity-base-dropdown {
+}
+
+.unity-base-dropdown__popup > .unity-base-dropdown > .unity-base-dropdown__container-outer {
+}
+
+.unity-base-dropdown__popup > .unity-base-dropdown > .unity-base-dropdown__container-outer > .unity-base-dropdown__container-inner {
+}
+
+.unity-base-dropdown__container-outer {
+    border-color: var(--dropdown-menu-border-color-outer);
+    background-color: var(--dropdown-menu-background-outer);
+}
+
+.unity-base-dropdown__container-inner {
+    background-color: var(--dropdown-menu-background-inner);
+    border-color: var(--dropdown-menu-border-color-inner);
+}
+
+.unity-base-dropdown__item {
+}
+
+.unity-base-dropdown__item:hover:enabled {
+    background-color: var(--dropdown-menu-background-item-hover);
+}
+
+.unity-base-dropdown__checkmark {
+}
+
+.unity-base-dropdown__item:checked > .unity-base-dropdown__item-content > .unity-base-dropdown__checkmark {
+}
+
+.unity-base-dropdown__item > .unity-base-dropdown__item-content > .unity-base-dropdown__checkmark {
+}
+
+.unity-base-dropdown__label {
+    color: var(--dropdown-menu-text-color);
+}
+
+.unity-base-dropdown__item:hover:enabled > .unity-base-dropdown__item-content > .unity-base-dropdown__label {
+    color: var(--dropdown-menu-text-color);
+}
+
+.unity-base-dropdown__separator {
+    background-color: var(--dropdown-menu-separator-color);
+}
+
+.unity-base-dropdown__item-content {
+}
+
+.unity-base-dropdown--content-width-menu .unity-base-dropdown__item {
+}
+
+.unity-base-dropdown--content-width-menu .unity-base-dropdown__label {
+}
+
+.unity-progress-bar {
+}
+
+.unity-progress-bar__progress {
+    background-color: var(--progress-bar-background-fill);
+}
+
+.unity-progress-bar__background {
+    border-color: var(--progress-bar-border-color);
+    background-color: var(--progress-bar-background);
+}
+
+.unity-progress-bar__title-container {
+}
+
+.unity-progress-bar__title {
+    color: var(--progress-bar-text-color);
+}
+
+.unity-foldout {
+}
+
+.unity-foldout__toggle > .unity-toggle__input {
+}
+
+.unity-foldout__toggle > .unity-toggle__input > .unity-toggle__checkmark {
+}
+
+.unity-text-element__selectable {
+}
+
+.unity-foldout__toggle .unity-text-element {
+}
+
+.unity-foldout__content {
+}
+
+.unity-foldout .unity-base-field__label {
+}
+
+.unity-property-field > .unity-foldout__unity-imgui-container--depth-1 {
+}
+
+.unity-property-field > .unity-foldout__unity-imgui-container--depth-2 {
+}
+
+.unity-property-field > .unity-foldout__unity-imgui-container--depth-3 {
+}
+
+.unity-property-field > .unity-foldout__unity-imgui-container--depth-4 {
+}
+
+.unity-property-field > .unity-foldout__unity-imgui-container--depth-max {
+}
+
+.unity-property-field.unity-property-field__inspector-property > .unity-foldout__unity-imgui-container--depth-1 {
+}
+
+.unity-property-field.unity-property-field__inspector-property > .unity-foldout__unity-imgui-container--depth-2 {
+}
+
+.unity-property-field.unity-property-field__inspector-property > .unity-foldout__unity-imgui-container--depth-3 {
+}
+
+.unity-property-field.unity-property-field__inspector-property > .unity-foldout__unity-imgui-container--depth-4 {
+}
+
+.unity-property-field.unity-property-field__inspector-property > .unity-foldout__unity-imgui-container--depth-max {
+}
+
+.unity-property-field.unity-property-field__inspector-property > .unity-foldout--depth-0 > foldout .unity-foldout__toggle--inspector {
+}
+
+.unity-property-field.unity-property-field__inspector-property > .unity-collection-view > .unity-foldout--depth-0 > .unity-foldout__toggle--inspector {
+}
+
+.unity-foldout__toggle--inspector {
+}
+
+.unity-foldout--depth-1 > .unity-base-field > .unity-base-field__label {
+}
+
+.unity-foldout--depth-1 > .unity-property-field > .unity-base-field > .unity-base-field__label {
+}
+
+.unity-foldout--depth-2 > .unity-base-field > .unity-base-field__label {
+}
+
+.unity-foldout--depth-2 > .unity-property-field > .unity-base-field > .unity-base-field__label {
+}
+
+.unity-foldout--depth-3 > .unity-base-field > .unity-base-field__label {
+}
+
+.unity-foldout--depth-3 > .unity-property-field > .unity-base-field > .unity-base-field__label {
+}
+
+.unity-foldout--depth-4 > .unity-base-field > .unity-base-field__label {
+}
+
+.unity-foldout--depth-4 > .unity-property-field > .unity-base-field > .unity-base-field__label {
+}
+
+.unity-foldout--depth-max > .unity-base-field > .unity-base-field__label {
+}
+
+.unity-foldout--depth-max > .unity-property-field > .unity-base-field > .unity-base-field__label {
+}
+
+.unity-foldout--depth-1 > .unity-base-field.unity-base-field__aligned > .unity-base-field__label {
+}
+
+.unity-foldout--depth-1 > .unity-property-field > .unity-base-field.unity-base-field__aligned > .unity-base-field__label {
+}
+
+.unity-foldout--depth-2 > .unity-base-field.unity-base-field__aligned > .unity-base-field__label {
+}
+
+.unity-foldout--depth-2 > .unity-property-field > .unity-base-field.unity-base-field__aligned > .unity-base-field__label {
+}
+
+.unity-foldout--depth-3 > .unity-base-field.unity-base-field__aligned > .unity-base-field__label {
+}
+
+.unity-foldout--depth-3 > .unity-property-field > .unity-base-field.unity-base-field__aligned > .unity-base-field__label {
+}
+
+.unity-foldout--depth-4 > .unity-base-field.unity-base-field__aligned > .unity-base-field__label {
+}
+
+.unity-foldout--depth-4 > .unity-property-field > .unity-base-field.unity-base-field__aligned > .unity-base-field__label {
+}
+
+.unity-foldout--depth-max > .unity-base-field.unity-base-field__aligned > .unity-base-field__label {
+}
+
+.unity-foldout--depth-max > .unity-property-field > .unity-base-field.unity-base-field__aligned > .unity-base-field__label {
+}
+
+.unity-foldout__toggle > .unity-toggle__input:checked > .unity-toggle__checkmark {
+}
+
+.unity-foldout__toggle > .unity-toggle__input:active:enabled > .unity-toggle__checkmark {
+}
+
+.unity-foldout__toggle > .unity-toggle__input:focus:enabled > .unity-toggle__checkmark {
+}
+
+.unity-foldout__toggle > .unity-toggle__input:focus:enabled > .unity-toggle__text {
+    color: var(--foldout-text-color-focus);
+}
+
+.unity-foldout__toggle > .unity-toggle__input:focus:enabled:checked > .unity-toggle__checkmark {
+}
+
+.unity-foldout__toggle > .unity-toggle__input:hover:enabled > .unity-toggle__checkmark {
+}
+
+.unity-foldout__toggle > .unity-toggle__input:hover:enabled:checked > .unity-toggle__checkmark {
+}
+
+.unity-foldout__toggle > .unity-toggle__input:hover:enabled:active > .unity-toggle__checkmark {
+}
+
+.unity-base-text-field {
+    --unity-selection-color: var(--base-text-field-selection-color);
+    --unity-cursor-color: var(--base-text-field-cursor-color);
+}
+
+.unity-base-text-field__input {
+    background-color: var(--base-text-field-background-default);
+    border-left-color: var(--base-text-field-border-sides-default);
+    border-top-color: var(--base-text-field-border-top-default);
+    border-right-color: var(--base-text-field-border-sides-default);
+    border-bottom-color: var(--base-text-field-border-bottom-default);
+    color: var(--base-text-field-text-color);
+}
+
+.unity-base-field:focus:enabled > .unity-base-field__label {
+    color: var(--color-text-focus);
+}
+
+.unity-base-text-field:hover:enabled > .unity-base-text-field__input {
+    border-color: var(--base-text-field-border-color-hover);
+}
+
+.unity-base-text-field__input:hover:enabled {
+    border-color: var(--base-text-field-border-color-hover);
+}
+
+.unity-base-text-field:focus:enabled > .unity-base-text-field__input {
+    border-color: var(--base-text-field-border-color-focus);
+}
+
+.unity-base-text-field__input:focus:enabled {
+    border-color: var(--base-text-field-border-color-focus);
+}
+
+.unity-base-field__object:focus:enabled > .unity-base-field__label {
+    color: var(--color-text-focus);
+}
+
+.unity-scroll-view--inner-input-field-component {
+}
+
+.unity-scroll-view__content-viewport--inner-input-field-component.unity-scroll-view__content-viewport--vertical {
+}
+
+.unity-scroll-view__content-viewport--inner-input-field-component.unity-scroll-view__content-viewport--vertical-horizontal {
+}
+
+.unity-scroll-view__content-container--vertical.unity-scroll-view__content-container--inner-input-field-component {
+}
+
+.unity-scroll-view__content-container--vertical-horizontal.unity-scroll-view__content-container--inner-input-field-component {
+}
+
+.unity-text-element--inner-input-field-component--vertical {
+}
+
+.unity-text-element--inner-input-field-component--vertical-horizontal {
+}
+
+.unity-text-element--inner-input-field-component--scroll-view {
+}
+
+.unity-text-element--inner-input-field-component {
+}
+
+.unity-base-text-field__input--single-line {
+}
+
+.unity-base-text-field__input--multiline {
+}
+
+.unity-base-text-field__input--multiline--scroll-view {
+}
+
+.unity-base-text-field__multiline-container {
+}
+
+.unity-base-text-field__input--placeholder {
+    color: var(--base-text-field-text-color);
+}
+
+.unity-two-pane-split-view {
+}
+
+.unity-two-pane-split-view--vertical {
+}
+
+.unity-two-pane-split-view--horizontal {
+}
+
+.unity-two-pane-split-view__content-container {
+}
+
+.unity-two-pane-split-view__handle-container {
+}
+
+.unity-two-pane-split-view__dragline {
+    background-color: var(--two-pane-split-view-dragline-color);
+}
+
+.unity-two-pane-split-view__dragline--horizontal {
+}
+
+.unity-two-pane-split-view__dragline--vertical {
+}
+
+.unity-two-pane-split-view__dragline-anchor {
+    background-color: var(--two-pane-split-view-dragline-anchor-color);
+}
+
+.unity-two-pane-split-view__dragline-anchor--horizontal {
+}
+
+.unity-two-pane-split-view__dragline-anchor--vertical {
+}
+
+.unity-collection-view__item--alternative-background {
+    background-color: var(--collection-view-background-item-alt);
+}
+
+.unity-collection-view__item:hover:enabled {
+    background-color: var(--collection-view-background-item-hover);
+}
+
+.unity-collection-view__reorderable-item:hover:enabled {
+    background-color: var(--collection-view-background-item-hover);
+}
+
+.unity-collection-view__item--selected {
+    background-color: var(--collection-view-background-item-selected);
+}
+
+.unity-collection-view__item--selected:hover:enabled {
+    background-color: var(--collection-view-background-item-selected-focus);
+    color: var(--collection-view-text-color-selected);
+}
+
+.unity-collection-view:focus:enabled .unity-collection-view__item--selected {
+    background-color: var(--collection-view-background-item-selected-focus);
+    color: var(--collection-view-text-color-selected);
+}
+
+.unity-collection-view {
+}
+
+.unity-collection-view .unity-foldout__toggle:focus:enabled:checked > .unity-toggle__input > .unity-toggle__checkmark {
+}
+
+.unity-collection-view .unity-foldout__toggle:focus:enabled > .unity-toggle__input > .unity-toggle__checkmark {
+}
+
+.unity-property-field > .unity-collection-view {
+}
+
+.unity-collection-view__scroll-view {
+}
+
+.unity-collection-view__background-fill {
+}
+
+.unity-collection-view--with-border {
+    border-color: var(--collection-view-border-color);
+}
+
+.unity-collection-view__item.unity-collection-view__item--drag-hover {
+    background-color: var(--collection-view-background-drag-hover);
+}
+
+.unity-collection-view:focus:enabled .unity-collection-view__item--selected.unity-collection-view__item--drag-hover {
+    background-color: var(--collection-view-background-drag-hover-selected-focus);
+}
+
+.unity-collection-view__drag-hover-bar {
+    background-color: var(--collection-view-drag-bar-color);
+}
+
+.unity-collection-view__drag-hover-marker {
+    border-color: var(--collection-view-drag-marker-border-color);
+    background-color: white;
+}
+
+.unity-tree-view {
+    background-color: var(--tree-view-background-default);
+}
+
+.unity-tree-view__list-view {
+}
+
+.unity-tree-view__item-toggle {
+}
+
+.unity-tree-view__item-toggle.unity-base-field__inspector-field {
+}
+
+.unity-tree-view__item-toggle > .unity-toggle__input > .unity-toggle__checkmark {
+}
+
+.unity-tree-view__item {
+}
+
+.unity-tree-view__item-indent {
+}
+
+.unity-tree-view__item-content {
+}
+
+.unity-list-view--with-header > .unity-foldout {
+}
+
+.unity-list-view--with-header > .unity-foldout > .unity-foldout__content {
+}
+
+.unity-list-view__scroll-view--with-footer {
+    background-color: var(--list-view-background-footer);
+    border-color: var(--list-view-border-color-default);
+}
+
+.unity-list-view__item > .unity-foldout__toggle {
+}
+
+.unity-list-view__item > .unity-foldout > .unity-foldout__toggle {
+}
+
+.unity-list-view__item > .unity-foldout__content {
+}
+
+.unity-list-view__item > .unity-foldout > .unity-foldout__content {
+}
+
+.unity-list-view__size-field {
+}
+
+.unity-list-view__size-field--with-footer {
+    background-color: var(--list-view-background-footer);
+}
+
+.unity-list-view__size-field--with-header {
+    background-color: transparent;
+}
+
+.unity-list-view > .unity-foldout > .unity-foldout__content {
+}
+
+.unity-list-view__empty-label {
+}
+
+.unity-list-view__over-max-multi-edit-limit-label {
+}
+
+.unity-list-view__reorderable-item {
+}
+
+.unity-list-view__reorderable-handle {
+}
+
+.unity-list-view__reorderable-handle-bar {
+    background-color: var(--list-view-background-reorder-handle);
+}
+
+.unity-list-view__reorderable-item__container {
+}
+
+.unity-list-view__footer {
+    background-color: var(--list-view-background-footer);
+    border-color: var(--list-view-border-color-default);
+}
+
+.unity-list-view__footer > .unity-button {
+    background-color: initial;
+}
+
+.unity-list-view__foldout-header > .unity-foldout__toggle:hover:enabled {
+    background-color: var(--list-view-background-header-hover);
+}
+
+.unity-list-view__foldout-header > .unity-foldout__toggle {
+}
+
+.unity-help-box {
+    border-color: var(--panel-border-help-box);
+    background-color: var(--panel-background-help-box);
+}
+
+.unity-help-box__label {
+}
+
+.unity-help-box__icon {
+}
+
+.unity-help-box__icon--info {
+}
+
+.unity-help-box__icon--warning {
+}
+
+.unity-help-box__icon--error {
+}
+
+.unity-ui-document__root {
+}
+
+.unity-min-max-gradient-field__visual-input {
+}
+
+.unity-min-max-gradient-field__dropdown-field {
+}
+
+.unity-min-max-gradient-field__dropdown-input {
+    background-color: transparent;
+}
+
+.unity-base-popup-field:hover:enabled > .unity-base-popup-field__input.unity-min-max-gradient-field__dropdown-input {
+    background-color: transparent;
+}
+
+.unity-min-max-gradient-field__gradient-container {
+}
+
+.unity-min-max-gradient-field__color-field {
+}
+
+.unity-button-strip-field__button {
+}
+
+.unity-button-strip-field__button-icon {
+}
+
+.unity-button-strip-field__button:checked {
+    background-color: var(--button-strip-field-background-checked);
+}
+
+.unity-button-strip-field__button--left {
+}
+
+.unity-button-strip-field__button--middle {
+}
+
+.unity-button-strip-field__button--right {
+}
+
+.unity-toggle-button-group {
+}
+
+.unity-toggle-button-group > .unity-base-field__input {
+}
+
+.unity-button-group {
+}
+
+.unity-button-group__button {
+}
+
+.unity-button-group__button:active {
+    background-color: var(--button-group-background-active);
+}
+
+.unity-button-group__button:checked {
+    background-color: var(--button-group-background-active);
+}
+
+.unity-button-group__button:checked:hover {
+    background-color:var(--button-group-background-hover);
+}
+
+.unity-button-group__button--mid:focus:enabled {
+    border-left-color: var(--button-group-border-left-focus);
+}
+
+.unity-button-group__button--right:focus:enabled {
+    border-left-color: var(--button-group-border-left-focus);
+}
+
+.unity-button-group__button--left {
+}
+
+.unity-button-group__button--mid {
+}
+
+.unity-button-group__button--right {
+}
+
+.unity-button-group__empty-label {
+}
+
+.unity-multi-column-view__header-container {
+    background-color: var(--panel-background-main);
+    border-bottom-color: var(--multi-column-header-border-right-default);
+}
+
+.unity-multi-column-view__row-container {
+}
+
+.unity-multi-column-view__cell {
+}
+
+.unity-multi-column-view__cell__label {
+}
+
+.unity-multi-column-header {
+}
+
+.unity-multi-column-header__column-container {
+}
+
+.unity-multi-column-header__resize-handle-container {
+}
+
+.unity-multi-column-header__column__resize-preview {
+}
+
+.unity-multi-column-header__column__resize-preview__visual {
+    background-color: var(--multi-column-header-resize-preview-color);
+}
+
+.unity-multi-column-header__column__move-preview {
+    border-color: var(--multi-column-header-move-preview-border-color);
+}
+
+.unity-multi-column-header__column__move-location-preview {
+}
+
+.unity-multi-column-header__column__move-location-preview__visual {
+    background-color: var(--multi-column-header-resize-preview-color);
+}
+
+.unity-multi-column-header__column-resize-handle {
+}
+
+.unity-multi-column-header__column-resize-handle__drag-area {
+}
+
+.unity-multi-column-header__column {
+    background-color: var(--multi-column-header-background-default);
+    border-right-color: var(--multi-column-header-border-right-default);
+}
+
+.unity-multi-column-header__column:hover:enabled {
+    background-color: var(--multi-column-header-background-hover);
+}
+
+.unity-multi-column-header__column:active:enabled {
+    background-color: var(--multi-column-header-background-active);
+}
+
+.unity-multi-column-header__column--moving {
+    background-color: var(--multi-column-header-background-moving);
+}
+
+.unity-multi-column-header__column--moving:hover:enabled {
+    background-color: var(--multi-column-header-background-moving);
+}
+
+.unity-multi-column-header__column__sort-indicator {
+}
+
+.unity-multi-column-header__column--sortable .unity-multi-column-header__column__sort-indicator {
+}
+
+.unity-multi-column-header__column__sort-indicator__index-label {
+}
+
+.unity-multi-column-header__column__sort-indicator__arrow {
+}
+
+.unity-multi-column-header__column--sorted-ascending .unity-multi-column-header__column__sort-indicator__arrow {
+}
+
+.unity-multi-column-header__column--sorted-descending .unity-multi-column-header__column__sort-indicator__arrow {
+}
+
+.unity-multi-column-header__column__content-container {
+}
+
+.unity-multi-column-header__column__default-content {
+}
+
+.unity-multi-column-header__column__default-content #unity-multi-column-header-column-title {
+}
+
+.unity-multi-column-header__column__default-content.unity-multi-column-header__column__content--has-title {
+}
+
+.unity-multi-column-header__column__default-content.unity-multi-column-header__column__content--has-title #unity-multi-column-header-column-title {
+}
+
+.unity-multi-column-header__column__icon {
+}
+
+.unity-multi-column-header__column__default-content.unity-multi-column-header__column__content--has-icon > .unity-multi-column-header__column__icon {
+}
+
+.unity-multi-column-header__column__title {
+}
+
+.unity-multi-column-header__column__default-content.unity-multi-column-header__column__content--has-title > .unity-multi-column-header__column__title {
+}
+
+.unity-composite-field > .unity-composite-field__input {
+}
+
+.unity-composite-field--multi-line > .unity-base-field__input {
+}
+
+.unity-composite-field--multi-line {
+}
+
+.unity-composite-field__field {
+}
+
+.unity-composite-field__field-group {
+}
+
+.unity-composite-field__field-group > .unity-composite-field__field {
+}
+
+.unity-composite-field__field > .unity-base-field__label {
+}
+
+.unity-composite-field__input .unity-composite-field__field {
+}
+
+#unity-z-input.unity-composite-field__field {
+}
+
+.unity-base-field__input > .unity-base-field__label--mixed-value {
+    color: var(--color-text-secondary);
+}
+
+.unity-object-field__object > .unity-base-field__label--mixed-value {
+    color: var(--object-field-text-color-default);
+}
+
+.unity-composite-field__field > .unity-base-field__label--mixed-value {
+    color: var(--composite-field-text-color-mixed-value);
+}
+
+.unity-composite-field__field--first > .unity-base-field__label {
+}
+
+.unity-base-field--no-label .unity-composite-field__field-spacer {
+}
+
+.unity-composite-field__field-spacer {
+}
+
+.unity-min-max-gradient-field__multiple-values-label {
+}
+
+.unity-tab-view .unity-tab {
+}
+
+.unity-tab-view .unity-tab:checked {
+}
+
+.unity-tab__header {
+    background-color: var(--tab-background-header-default);
+    color: var(--tab-text-color);
+}
+
+.unity-tab-view__reorderable .unity-tab__header {
+}
+
+.unity-tab__header:hover {
+    color: var(--tab-text-color);
+    background-color: var(--tab-background-header-hover);
+}
+
+.unity-tab__header:checked {
+    color: var(--tab-text-color);
+}
+
+.unity-tab__header:checked:hover {
+    color: var(--tab-text-color);
+}
+
+.unity-tab__header > .unity-tab__header-image {
+}
+
+.unity-tab__header > .unity-tab__header-image--standalone {
+}
+
+.unity-tab__header > .unity-tab__header-label {
+}
+
+.unity-tab__header > .unity-tab__header-image--empty {
+}
+
+.unity-tab__header > .unity-tab__header-label--empty {
+}
+
+.unity-tab__header-underline {
+}
+
+.unity-tab__header:checked > .unity-tab__header-underline {
+    background-color: var(--tab-background-header-underline);
+}
+
+.unity-tab__header__closeable {
+}
+
+.unity-tab__close-button {
+}
+
+.unity-tab__header__closeable:hover .unity-tab__close-button {
+}
+
+.unity-tab__header__closeable .unity-tab__close-button:hover {
+}
+
+.unity-tab-view__header-container {
+}
+
+.unity-tab-view__vertical .unity-tab-view__header-container {
+}
+
+.unity-tab-view__drag-preview {
+    border-color: var(--tab-view-drag-preview-border-color);
+}
+
+.unity-tab-view__drag-location-preview {
+}
+
+.unity-tab-view__drag-location-preview__visual {
+    background-color: var(--tab-view-drag-location-preview-color);
+}
+
+.unity-tab-view__drag-location-preview__horizontal .unity-tab-view__drag-location-preview__visual {
+}
+
+.unity-tab-view__drag-location-preview__vertical .unity-tab-view__drag-location-preview__visual {
+}
+
+.unity-tab--dragging {
+    background-color: var(--tab-background-dragging);
+}
+
+.unity-tab--dragging:hover {
+    background-color: var(--tab-background-dragging);
+}
+
+.unity-tab--dragging .unity-tab__header {
+    background-color: var(--tab-background-dragging);
+}
+
+.unity-tab__reorderable-handle {
+}
+
+.unity-tab-view__vertical .unity-tab__reorderable-handle {
+}
+
+.unity-tab__reorderable-handle-bar {
+    background-color: var(--tab-background-header-underline);
+}
+
+.unity-tab-view__reorderable .unity-tab__header:hover .unity-tab__reorderable-handle-bar {
+}
+
+.unity-tab-view__reorderable .unity-tab__reorderable-handle:hover .unity-tab__reorderable-handle-bar {
+}
+
+.unity-tab-view__reorderable .unity-tab--dragging .unity-tab__reorderable-handle-bar {
+}
+
+.unity-tab-view__reorderable .unity-tab--dragging:hover .unity-tab__reorderable-handle-bar {
+}
+
+.unity-tab__reorderable-handle-bar--left {
+}
+
+.unity-tab-view__content-viewport {
+    background-color: var(--tab-content-background);
+}
+
+.unity-tab-view > .unity-tab-view__content-viewport > .unity-repeat-button {
+    background-color: var(--tab-content-background);
+}
+
+.unity-tab-view > .unity-tab-view__content-viewport > .unity-tab-view__next-button {
+}
+
+.unity-tab-view > .unity-tab-view__content-viewport > .unity-tab-view__previous-button {
+}
+
+.unity-list-view__header {
+    border-color: var(--list-view-border-color-header);
+    background-color: var(--list-view-background-header);
+}
+
+.unity-event__left-column {
+}
+
+.unity-event__right-column {
+}
+
+.unity-event__list-view-scroll-view {
+}
+
+.unity-event__list-view-scroll-view .unity-list-view__reorderable-item__container {
+}
+
+.unity-event__list-view-scroll-view .unity-list-view__reorderable-handle {
+}
+
+.unity-event__right-column > .unity-base-field {
+}
+
+#unity-event__parameter-property > .unity-base-field {
+}
+
+.unity-event__container {
+}
+
+.unity-event__list-view-item {
+}
+
+.unity-binding--prefab-override {
+}
+
+.unity-binding--prefab-override > .unity-base-field__label {
+}
+
+.unity-binding--prefab-override > .unity-base-field__input {
+}
+
+.unity-binding__prefab-override-bar {
+    background-color: var(--binding-bar-background-prefab-override);
+}
+
+.unity-binding__prefab-override-bar-not-applicable {
+    background-color: var(--binding-bar-background-prefab-override);
+}
+
+.unity-binding--live-property {
+}
+
+.unity-binding--live-property > .unity-base-field__label {
+}
+
+.unity-binding--live-property > .unity-base-field__input {
+}
+
+.unity-binding__live-property-bar {
+    background-color: var(--binding-bar-background-live-property);
+}
+
+.unity-binding__preset-ignore-bar {
+    background-color: var(--binding-bar-background-preset-ignore);
+}
+
+.unity-color-field__input {
+    border-color: var(--color-field-border-color-default);
+}
+
+.unity-color-field__eyedropper {
+    background-color: var(--color-field-background-eyedropper);
+}
+
+.unity-color-field__color-container {
+}
+
+.unity-color-field__gradient-container {
+}
+
+.unity-color-field__gradient-container > VisualElement {
+}
+
+.unity-color-field__color-container > .unity-base-field__label--mixed-value {
+    color: var(--color-field-text-color-mixed-value);
+}
+
+.unity-color-field__hdr {
+    color: gray;
+}
+
+.unity-color-field__color {
+}
+
+.unity-color-field__color--mixed-value {
+    background-color: var(--color-field-background-mixed-value);
+}
+
+.unity-color-field__color-container .unity-progress-bar__container {
+}
+
+.unity-color-field__color-container .unity-progress-bar__progress {
+    background-color: var(--color-field-progress-bar-fill);
+}
+
+.unity-color-field__color-container .unity-progress-bar__background {
+    background-color: var(--color-field-progress-bar-background);
+}
+
+.unity-color-field__color-container > .unity-progress-bar {
+}
+
+.unity-color-field__input:focus:enabled {
+    border-color: var(--color-field-border-color-focus);
+}
+
+.unity-color-field:hover:enabled > .unity-color-field__input {
+    border-color: var(--color-field-border-color-hover);
+}
+
+.unity-color-field__input:hover:enabled {
+    border-color: var(--color-field-border-color-hover);
+}
+
+.unity-color-field__eyedropper:hover:enabled {
+    background-color: var(--color-field-background-eyedropper-hover);
+}
+
+.unity-property-control {
+}
+
+.unity-property-control__dragger {
+}
+
+.unity-property-control__label {
+}
+
+.unity-property-control__control {
+}
+
+.unity-object-field__input {
+    background-color: var(--object-field-background-default);
+    border-color: var(--object-field-border-color-default);
+}
+
+.unity-object-field:hover:enabled > .unity-object-field__input {
+    border-color: var(--object-field-border-color-hover);
+}
+
+.unity-object-field:checked > .unity-object-field__input {
+    border-color: var(--object-field-border-color-hover);
+}
+
+.unity-object-field:focus:enabled > .unity-object-field__input {
+    border-color: var(--object-field-border-color-focus);
+}
+
+.unity-object-field__object:focus:enabled > .unity-object-field-display__label {
+    color: var(--object-field-text-color-focus);
+}
+
+.unity-object-field__object {
+}
+
+.unity-object-field-display__icon {
+}
+
+.unity-object-field-display__label {
+    color: var(--object-field-display-text-color);
+}
+
+.unity-object-field-display__label--value-null {
+}
+
+.unity-object-field-display--accept-drop {
+    background-color: var(--object-field-background-accept-drop);
+}
+
+.unity-object-field__selector {
+    background-color: var(--object-field-background-selector);
+}
+
+.unity-object-field__selector:hover:enabled {
+    background-color: var(--object-field-background-selector-hover);
+}
+
+.unity-curve-field__input {
+    background-color: var(--curve-field-background);
+    --unity-curve-color: var(--curve-field-curve-color);
+    border-color: var(--curve-field-border-color-default);
+}
+
+.unity-curve-field__content {
+}
+
+.unity-curve-field:focus:enabled > .unity-curve-field__input {
+    border-color: var(--curve-field-border-color-focus);
+}
+
+.unity-gradient-field__input {
+    border-color: var(--gradient-field-border-color-default);
+}
+
+.unity-gradient-field__background {
+    background-size: 30px 30px;
+    background-repeat: repeat;
+}
+
+.unity-gradient-field__content {
+}
+
+.unity-gradient-field:focus:enabled > .unity-gradient-field__input {
+    border-color: var(--gradient-field-border-color-focus);
+}
+
+.unity-inspector-element {
+}
+
+.unity-inspector-element--uie {
+}
+
+.unity-inspector-element > .unity-base-field > .unity-base-field__label {
+}
+
+.unity-inspector-element .unity-property-field__label {
+}
+
+.unity-inspector-element > .unity-property-field > .unity-base-field > .unity-base-field__label {
+}
+
+.unity-base-field__inspector-field {
+}
+
+.unity-list-view__size-field.unity-base-field__inspector-field {
+}
+
+.unity-list-view__size-field--with-header.unity-base-field__inspector-field {
+}
+
+.unity-inspector-element--uie > #unity-prefab-override-bars-container {
+}
+
+.unity-inspector-element--uie > #unity-live-property-bars-container {
+}
+
+.unity-decorator-drawers-container {
+}
+
+.unity-decorator-drawers-container > .unity-header-drawer__label {
+}
+
+.unity-property-field__imgui-container-property {
+}
+
+.unity-property-field__inspector-property > .unity-imgui-container {
+}
+
+.unity-property-field__imgui-container-property > .unity-decorator-drawers-container > .unity-imgui-container {
+}
+
+.game-object-inspector {
+}
+
+.unity-property-field > .unity-base-field__inspector-field.unity-toggle-button-group > .unity-base-field__input > .unity-button-group {
+}
+
+.unity-base-field__inspector-field.unity-toggle-button-group > .unity-base-field__label {
+}
+
+.unity-toggle-button-group--fixed-size .unity-button-group__button {
+}
+
+.unity-bounds-field > .unity-base-field__input {
+}
+
+.unity-bounds-field .unity-composite-field {
+}
+
+.unity-bounds-int-field .unity-composite-field {
+}
+
+.unity-bounds-field {
+}
+
+.unity-bounds-int-field {
+}
+
+.unity-bounds-field__input {
+}
+
+.unity-bounds-int-field__input {
+}
+
+.unity-bounds-field__label {
+}
+
+.unity-bounds-int-field__label {
+}
+
+.unity-bounds-field__center-field {
+}
+
+.unity-bounds-field__extents-field {
+}
+
+.unity-bounds-int-field__position-field {
+}
+
+.unity-bounds-int-field__size-field {
+}
+
+.unity-bounds-field__center-field > .unity-base-field__label {
+}
+
+.unity-bounds-field__extents-field > .unity-base-field__label {
+}
+
+.unity-bounds-int-field__position-field > .unity-base-field__label {
+}
+
+.unity-bounds-int-field__size-field > .unity-base-field__label {
+}
+
+.unity-bounds-field__center-field.unity-base-field__aligned > .unity-base-field__label {
+}
+
+.unity-bounds-field__extents-field.unity-base-field__aligned > .unity-base-field__label {
+}
+
+.unity-bounds-int-field__position-field.unity-base-field__aligned > .unity-base-field__label {
+}
+
+.unity-bounds-int-field__size-field.unity-base-field__aligned > .unity-base-field__label {
+}
+
+.unity-bounds-field.unity-base-field--no-label > .unity-base-field__input > .unity-vector3-field > .unity-base-field__label {
+}
+
+.unity-bounds-int-field.unity-base-field--no-label > .unity-base-field__input > .unity-vector3-int-field > .unity-base-field__label {
+}
+
+.unity-bounds-field.unity-base-field--no-label > .unity-base-field__input > .unity-vector3-field.unity-base-field__aligned > .unity-base-field__label {
+}
+
+.unity-bounds-int-field.unity-base-field--no-label > .unity-base-field__input > .unity-vector3-int-field.unity-base-field__aligned > .unity-base-field__label {
+}
+
+.unity-search-field-base {
+    background-image: none;
+    background-color: var(--search-field-background-default);
+    border-left-color: var(--search-field-border-sides-default);
+    border-top-color: var(--search-field-border-top-default);
+    border-right-color: var(--search-field-border-sides-default);
+    border-bottom-color: var(--search-field-border-bottom-default);
+}
+
+.unity-search-field-base:hover:enabled {
+    border-color: var(--search-field-border-color-hover);
+}
+
+.unity-search-field-base:focus:enabled {
+    border-color: var(--search-field-border-color-focus);
+}
+
+.unity-search-field-base:focus:hover:enabled {
+    border-color: var(--search-field-border-color-focus);
+}
+
+.unity-search-field-base__search-button {
+    background-color: transparent;
+}
+
+.unity-search-field-base--popup > .unity-search-field-base__search-button {
+}
+
+.unity-search-field-base__search-button:hover:enabled {
+    background-color: transparent;
+}
+
+.unity-search-field-base__text-field {
+}
+
+.unity-search-field-base__text-field:focus:enabled {
+    background-image: none;
+}
+
+.unity-search-field-base__text-field__input {
+}
+
+.unity-search-field-base__text-field:hover:enabled > .unity-search-field-base__text-field__input {
+}
+
+.unity-search-field-base__text-field > .unity-search-field-base__text-field__input:hover:enabled {
+}
+
+.unity-search-field-base__text-field:focus:enabled > .unity-search-field-base__text-field__input {
+}
+
+.unity-search-field-base__text-field > .unity-search-field-base__text-field__input:focus:enabled {
+}
+
+.unity-search-field-base__cancel-button {
+    background-color: transparent;
+}
+
+.unity-search-field-base__cancel-button:hover:enabled {
+    background-color: transparent;
+}
+
+.unity-search-field-base__cancel-button--off {
+    background-image: none;
+}
+
+.unity-ui-navigation-hidden {
+}
+
+.unity-ui-navigation-indent > * > * > .unity-label {
+}
+
+.unity-toolbar-button > .unity-button__image {
+}
+
+.unity-toolbar-experimental-container {
+}
+
+.unity-toolbar-experimental {
+    background-color: var(--experimental-tag-background);
+    color: var(--experimental-tag-text-color);
+    border-color: var(--experimental-tag-border-color);
+}
+
+.unity-experimental-tag {
+    background-color: var(--experimental-tag-background);
+    color: var(--experimental-tag-text-color);
+    border-color: var(--experimental-tag-border-color);
+}
+
+.unity-popup-window-root {
+    border-color: var(--popup-window-root-border-color);
+}
+
+.unity-popup-window__invalid-size-label {
+}
+
+.graphView {
+}
+
+.unity-binding--animation-animated {
+    -unity-background-image-tint-color: var(--binding-tint-color-animation-animated);
+}
+
+.unity-binding--animation-animated > .unity-toggle__checkmark {
+    -unity-background-image-tint-color: var(--binding-tint-color-animation-animated);
+}
+
+.unity-binding--animation-recorded {
+    -unity-background-image-tint-color: var(--binding-tint-color-animation-recorded);
+}
+
+.unity-binding--animation-recorded > .unity-toggle__checkmark {
+    -unity-background-image-tint-color: var(--binding-tint-color-animation-recorded);
+}
+
+.unity-binding--animation-candidate {
+    -unity-background-image-tint-color: var(--binding-tint-color-animation-candidate);
+}
+
+.unity-binding--animation-candidate > .unity-toggle__checkmark {
+    -unity-background-image-tint-color: var(--binding-tint-color-animation-candidate);
+}
+
+.unity-gradient-field__border {
+    border-color: var(--gradient-field-inner-border-color-default);
+}
+
+.unity-gradient-field__input:focus > .unity-gradient-field__border {
+    border-color: var(--gradient-field-inner-border-color-focus);
+}
+
+/* ----- ToolSafe additions merged on 2025-06-22 ----- */
+
+.unity-toolbar {
+    background-color: var(--toolbar-background-default);
+    border-color: var(--toolbar-border-default);
+}
+
+
+.unity-toolbar-toggle {
+    color: var(--toolbar-toggle-text-color);
+    background-color: var(--toolbar-toggle-background-default);
+    border-color: var(--toolbar-toggle-border-color);
+}
+
+
+.unity-toolbar-toggle:hover:enabled {
+    color: var(--toolbar-toggle-text-color);
+    background-color: var(--toolbar-toggle-background-hover);
+}
+
+
+.unity-toolbar-toggle:active:enabled {
+    color: var(--toolbar-toggle-text-color);
+    background-color: var(--toolbar-toggle-background-active);
+}
+
+
+.unity-toolbar-toggle:checked {
+    color: var(--toolbar-toggle-text-color);
+    background-color: var(--toolbar-toggle-background-active);
+}
+
+
+.unity-toolbar-toggle .unity-toggle__checkmark {
+}
+
+
+.unity-toolbar-toggle .unity-toggle__input {
+}
+
+
+.unity-toolbar-toggle .unity-toggle__label {
+}
+
+
+.unity-toolbar-button {
+    color: var(--toolbar-button-text-color);
+    background-color: var(--toolbar-button-background-default);
+    border-color: var(--toolbar-button-border-default);
+}
+
+
+.unity-toolbar-button:hover:enabled {
+    color: var(--toolbar-button-text-color);
+    background-color: var(--toolbar-button-background-hover);
+}
+
+
+.unity-toolbar-button:active:enabled {
+    color: var(--toolbar-button-text-color);
+    background-color: var(--toolbar-button-background-active);
+}
+
+
+.unity-toolbar-button:focus:enabled {
+    border-color: var(--toolbar-button-border-focus);
+}
+
+
+.unity-toolbar-menu {
+    color: var(--toolbar-menu-text-color);
+    background-color: var(--toolbar-menu-background-default);
+    border-color: var(--toolbar-menu-border-default);
+}
+
+
+.unity-toolbar-menu:hover:enabled {
+    color: var(--toolbar-menu-text-color);
+    background-color: var(--toolbar-menu-background-hover);
+}
+
+
+.unity-toolbar-menu:active:enabled {
+    color: var(--toolbar-menu-text-color);
+    background-color: var(--toolbar-menu-background-active);
+}
+
+
+.unity-toolbar-menu__text {
+}
+
+
+.unity-toolbar-menu__arrow {
+}
+
+
+.unity-toolbar-spacer {
+}
+
+
+.unity-toolbar-spacer--flexible {
+}
+
+
+.unity-toolbar-breadcrumbs {
+}
+
+
+.unity-toolbar-breadcrumbs__item {
+    color: var(--toolbar-breadcrumbs-text-color);
+}
+
+
+.unity-toolbar-breadcrumbs__item:active:enabled {
+}
+
+
+.unity-toolbar-breadcrumbs__first-item {
+}
+
+
+.unity-toolbar-breadcrumbs__first-item:active:enabled {
+}
+
+
+.unity-icon-arrow-preview-packages-in-use {
+}
+
+
+.icon .unity-editor-toolbar-preview-package-in-use__icon {
+}
+
+
+.icon .unity-editor-toolbar-element-preview-packages-in-use__label {
+}

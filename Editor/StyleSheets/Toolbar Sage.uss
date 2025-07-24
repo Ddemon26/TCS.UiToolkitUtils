@@ -1,0 +1,117 @@
+.unity-toolbar {
+    background-color: rgb(54, 37, 68);
+    border-color: rgb(35, 35, 35);
+}
+.unity-toolbar-toggle {
+    color: rgb(237, 230, 221);
+    background-color: rgb(54, 37, 68);
+    border-color: rgb(35, 35, 35);
+}
+.unity-toolbar-toggle:hover:enabled {
+    color: rgb(237, 230, 221);
+    background-color: rgb(72, 49, 90);
+}
+.unity-toolbar-toggle:active:enabled {
+    color: rgb(237, 230, 221);
+    background-color: rgb(82, 56, 103);
+}
+.unity-toolbar-toggle:checked {
+    color: rgb(237, 230, 221);
+    background-color: rgb(82, 56, 103);
+}
+.unity-toolbar-toggle .unity-toggle__checkmark {
+}
+.unity-toolbar-toggle .unity-toggle__input {
+}
+.unity-toolbar-toggle .unity-toggle__label {
+}
+.unity-toolbar-button {
+    color: rgb(237, 230, 221);
+    background-color: rgb(54, 37, 68);
+    border-color: rgb(35, 35, 35);
+}
+.unity-toolbar-button:hover:enabled {
+    color: rgb(237, 230, 221);
+    background-color: rgb(72, 49, 90);
+}
+.unity-toolbar-button:active:enabled {
+    color: rgb(237, 230, 221);
+    background-color: rgb(82, 56, 103);
+}
+.unity-toolbar-button:focus:enabled {
+    border-color: rgb(58, 121, 187);
+}
+.unity-toolbar-menu {
+    color: rgb(237, 230, 221);
+    background-color: rgb(54, 37, 68);
+    border-color: rgb(35, 35, 35);
+}
+.unity-toolbar-menu:hover:enabled {
+    color: rgb(237, 230, 221);
+    background-color: rgb(72, 49, 90);
+}
+.unity-toolbar-menu:active:enabled {
+    color: rgb(237, 230, 221);
+    background-color: rgb(82, 56, 103);
+}
+.unity-toolbar-menu__text {
+}
+.unity-toolbar-menu__arrow {
+}
+.unity-toolbar-spacer {
+}
+.unity-toolbar-spacer--flexible {
+}
+.unity-toolbar-breadcrumbs {
+}
+.unity-toolbar-breadcrumbs__item {
+    color: rgb(237, 230, 221);
+}
+.unity-toolbar-breadcrumbs__item:active:enabled {
+}
+.unity-toolbar-breadcrumbs__first-item {
+}
+.unity-toolbar-breadcrumbs__first-item:active:enabled {
+}
+.unity-icon-arrow-preview-packages-in-use {
+}
+.icon .unity-editor-toolbar-preview-package-in-use__icon {
+}
+.icon .unity-editor-toolbar-element-preview-packages-in-use__label {
+}
+.unity-binding__prefab-override-bar {
+    background-color: rgb(177, 162, 77);
+}
+.unity-binding__prefab-override-bar-not-applicable {
+    background-color: rgb(177, 162, 77);
+}
+.unity-binding__live-property-bar {
+    background-color: rgb(203, 175, 73);
+}
+.unity-binding--animation-animated {
+    -unity-background-image-tint-color: rgb(137, 216, 255);
+}
+.unity-binding--animation-animated > .unity-toggle__checkmark {
+    -unity-background-image-tint-color: rgb(137, 216, 255);
+}
+.unity-binding--animation-recorded {
+    -unity-background-image-tint-color: rgb(255, 127, 127);
+}
+.unity-binding--animation-recorded > .unity-toggle__checkmark {
+    -unity-background-image-tint-color: rgb(255, 127, 127);
+}
+.unity-binding--animation-candidate {
+    -unity-background-image-tint-color: rgb(255, 170, 109);
+}
+.unity-binding--animation-candidate > .unity-toggle__checkmark {
+    -unity-background-image-tint-color: rgb(255, 170, 109);
+}
+.unity-base-text-field {
+    --unity-cursor-color: rgb(237, 230, 221);
+}
+.unity-gradient-field__border {
+    border-color: rgb(29, 29, 29);
+}
+.unity-gradient-field__input:focus > .unity-gradient-field__border {
+    border-color: rgb(58, 121, 187);
+}

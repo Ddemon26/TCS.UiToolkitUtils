@@ -170,6 +170,11 @@ namespace TCS.UiToolkitUtils.Editor {
             var root = rootVisualElement;
             root.style.flexDirection = FlexDirection.Row;
 
+            var styleSheetPallet = Resources.Load<StyleSheet>( "StyleSheets/StylePallet_MysticSage" );
+            if ( styleSheetPallet != null ) {
+                root.styleSheets.Add( styleSheetPallet );
+            }
+
             var leftPane = new VisualElement {
                 style = {
                     width = new Length( 50, LengthUnit.Percent ),
